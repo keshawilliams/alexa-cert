@@ -47,9 +47,56 @@
                 {
                     "name": "AMAZON.YesIntent",
                     "samples": []
+                },
+                {
+                    "name": "SpeakToGuideIntent",
+                    "slots": [],
+                    "samples": [
+                        "Speak to the guide",
+                        "I'd like a travel tip"
+                    ]
+                },
+                {
+                    "name": "RefundProductIntent",
+                    "slots": [],
+                    "samples": [
+                        "I'd like a refund"
+                    ]
                 }
             ],
             "types": []
-        }
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "StartAdventureIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.286996694500.861813784993"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.286996694500.861813784993",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which country"
+                    }
+                ]
+            }
+        ]
     }
 }
